@@ -98,6 +98,10 @@ func (n *Notifier) SetHost(h string) {
 	n.createNoticeURL = buildCreateNoticeURL(h, n.projectId, n.projectKey)
 }
 
+func (n *Notifier) SetURL(url string) {
+	n.createNoticeURL = url
+}
+
 // AddFilter adds filter that can modify or ignore notice.
 func (n *Notifier) AddFilter(fn filter) {
 	n.filters = append(n.filters, fn)
